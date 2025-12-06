@@ -1,0 +1,53 @@
+type User @table {
+  firebaseUid: String!
+  displayName: String!
+  userType: String!
+  createdAt: Timestamp!
+  email: String
+  phoneNumber: String
+  organizationName: String
+  location: String
+}
+
+type Incident @table {
+  latitude: Float!
+  longitude: Float!
+  detectedAt: Timestamp!
+  status: String!
+  beforePhotos: [String!]!
+  description: String
+  assignedToUser: User
+  assignedToNGO: Organization
+  completedAt: Timestamp
+  completedBy: User
+}
+
+type Organization @table {
+  name: String!
+  organizationType: String!
+  createdAt: Timestamp!
+  contactPerson: String
+  contactEmail: String
+  contactPhone: String
+  description: String
+}
+
+type TaskAssignment @table(key: ["incident", "assignedAt"]) {
+  incident: Incident!
+  assignedAt: Timestamp!
+  status: String!
+  user: User
+  organization: Organization
+  acceptedAt: Timestamp
+  completedAt: Timestamp
+  afterPhotos: [String!]
+  completionNotes: String
+}
+
+type IncidentReport @table(key: ["incident", "user", "reportedAt"]) {
+  incident: Incident!
+  user: User!
+  reportType: String!
+  reportedAt: Timestamp!
+  notes: String
+}

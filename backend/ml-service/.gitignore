@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# ML Model files (these can be large)
+models/*.pth
+models/*.pt
+models/*.h5
+models/*.pb
+models/*.onnx
+models/*.tflite
+models/*.ptl
+
+# But keep the directory structure
+!models/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+

@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "GangaGuard",
+    "slug": "gangaguard",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "gangaguard",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "GangaGuard needs your location to show nearby cleanup tasks and help you find garbage incidents in your area.",
+        "NSLocationAlwaysUsageDescription": "GangaGuard needs your location to show nearby cleanup tasks and help you find garbage incidents in your area."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "gangaguard-demo-project-id"
+      },
+      "apiBaseUrl": "http://10.35.66.151:4000",
+      "googleWebClientId": "198157623538-s0kg4csjeubrnd7kilmp7rce3bhdm9a6.apps.googleusercontent.com"
+    },
+    "plugins": [
+      "expo-asset",
+      "expo-web-browser"
+    ]
+  }
+}
